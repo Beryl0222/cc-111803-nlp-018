@@ -1,0 +1,30 @@
+{
+  "reviewers": [
+    {
+      "id": "QA-1",
+      "role": "质检员",
+      "authorized": true
+    },
+    {
+      "id": "AG-7",
+      "role": "外部顾问",
+      "authorized": false
+    }
+  ],
+  "recordings": [
+    {
+      "id": "CALL-15",
+      "revision": 1,
+      "duration_seconds": 74
+    }
+  ],
+  "redactions": [
+    {
+      "field": "account_id",
+      "range": [
+        12.0,
+        15.2
+      ]
+    }
+  ]
+}

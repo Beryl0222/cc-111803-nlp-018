@@ -3,12 +3,12 @@
     "record_id": "call-15",
     "source": "call-transcript",
     "revision": 1,
-    "text": "客服：我会帮你查退款进度，不代表今天到账。"
+    "text": "00:12 客户：账号 882173，想确认退款。\n00:19 客服：我不会承诺今天到账，会帮你查退款进度。"
   },
   {
-    "record_id": "call-15-fix",
-    "source": "transcript-correction",
-    "revision": 2,
-    "text": "客服：我不会承诺今天到账，会帮你查退款进度。"
+    "record_id": "call-review",
+    "source": "review-note",
+    "revision": 1,
+    "text": "对外引用不得暴露账户号码，否定词不可遮去。"
   }
 ]

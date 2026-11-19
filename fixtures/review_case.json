@@ -2,15 +2,56 @@
   "call": "CALL-15",
   "version": 1,
   "turns": [
-    {"id": "customer-01", "speaker": "客户", "start_ms": 12000, "end_ms": 18700, "text": "另一位客服承诺今天到账。"},
-    {"id": "agent-01", "speaker": "坐席", "start_ms": 19000, "end_ms": 24700, "text": "账号F03，我不会承诺今天到账，会帮你查。"}
+    {
+      "id": "customer-01",
+      "speaker": "客户",
+      "start_ms": 12000,
+      "end_ms": 18700,
+      "text": "另一位客服承诺今天到账。"
+    },
+    {
+      "id": "agent-01",
+      "speaker": "坐席",
+      "start_ms": 19000,
+      "end_ms": 24700,
+      "text": "账号F03，我不会承诺今天到账，会帮你查。"
+    }
   ],
-  "roles": {"QA-1": "内审", "AG-7": "外部"},
+  "roles": {
+    "QA-1": "内审",
+    "AG-7": "外部"
+  },
   "findings": [
-    {"id": "refund", "verdict": "仅查询", "reviewer": "QA-1",
-     "passage": {"turn": "agent-01", "start": 0, "end": 21},
-     "essential": [{"turn": "agent-01", "start": 7, "end": 10}]}
+    {
+      "id": "refund",
+      "verdict": "仅查询",
+      "reviewer": "QA-1",
+      "passage": {
+        "turn": "agent-01",
+        "start": 0,
+        "end": 21
+      },
+      "essential": [
+        {
+          "turn": "agent-01",
+          "start": 7,
+          "end": 10
+        }
+      ]
+    }
   ],
-  "masks": [{"turn": "agent-01", "start": 2, "end": 5}],
-  "issuance": [{"receipt": "packet-8", "finding": "refund"}]
+  "masks": [
+    {
+      "turn": "agent-01",
+      "start": 2,
+      "end": 5
+    }
+  ],
+  "issuance": [
+    {
+      "receipt": "packet-8",
+      "finding": "refund",
+      "text": "账号■■■，我不会承诺今天到账，会帮你查。"
+    }
+  ]
 }

@@ -1,0 +1,120 @@
+{
+  "call": "CALL-21",
+  "version": 1,
+  "turns": [
+    {
+      "id": "c1",
+      "speaker": "客户",
+      "start_ms": 1000,
+      "end_ms": 8000,
+      "text": "你们之前说今天能退款到账，我这单到底什么时候退？"
+    },
+    {
+      "id": "a1",
+      "speaker": "坐席",
+      "start_ms": 8200,
+      "end_ms": 12000,
+      "text": "这笔退款可以退"
+    },
+    {
+      "id": "c2",
+      "speaker": "客户",
+      "start_ms": 12100,
+      "end_ms": 13500,
+      "text": "等一下，我先说，是另一笔订单"
+    },
+    {
+      "id": "a2",
+      "speaker": "坐席",
+      "start_ms": 13600,
+      "end_ms": 18000,
+      "text": "前提是还没结算，另一笔订单要单独查"
+    },
+    {
+      "id": "a3",
+      "speaker": "坐席",
+      "start_ms": 18100,
+      "end_ms": 23000,
+      "text": "账号 882173，我帮您查这笔的退款进度。"
+    },
+    {
+      "id": "c3",
+      "speaker": "客户",
+      "start_ms": 23100,
+      "end_ms": 26000,
+      "text": "那到底能不能退？"
+    },
+    {
+      "id": "a4",
+      "speaker": "坐席",
+      "start_ms": 26100,
+      "end_ms": 30000,
+      "text": "我没法承诺今天到账，要看审核。"
+    }
+  ],
+  "roles": {
+    "QA-1": "内审",
+    "AG-7": "外部"
+  },
+  "findings": [
+    {
+      "id": "gated",
+      "matter": "refund-882173",
+      "verdict": "附条件答复",
+      "reviewer": "QA-1",
+      "passage": {
+        "turn": "a1",
+        "start": 0,
+        "end": 7
+      },
+      "support": [
+        {
+          "turn": "a2",
+          "start": 0,
+          "end": 8
+        }
+      ],
+      "sensitive": [
+        "882173"
+      ]
+    },
+    {
+      "id": "query",
+      "matter": "refund-882173",
+      "verdict": "仅查询",
+      "reviewer": "QA-1",
+      "passage": {
+        "turn": "a3",
+        "start": 0,
+        "end": 22
+      },
+      "sensitive": [
+        "882173"
+      ]
+    },
+    {
+      "id": "denied",
+      "matter": "refund-OTHER",
+      "verdict": "无法认定",
+      "reviewer": "QA-1",
+      "passage": {
+        "turn": "a4",
+        "start": 0,
+        "end": 15
+      }
+    }
+  ],
+  "masks": [
+    {
+      "turn": "a3",
+      "start": 3,
+      "end": 9
+    }
+  ],
+  "issuance": [
+    {
+      "receipt": "rcpt-21",
+      "finding": "query"
+    }
+  ]
+}
